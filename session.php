@@ -22,6 +22,15 @@ else header('Location: authDB.php');
 <html lang="fr">
   <head>
   <title>Session</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> 
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+      $("#datepicker").datepicker({ dateFormat: "dd-mm-yy"});
+    });
+  </script>
   </head>
   <body>
 
@@ -69,6 +78,9 @@ $reponse->closeCursor();
 </p>
 <p>
 <input type="text" name="heure" placeholder="Heure..." required>h.
+</p>
+<p>
+<input type="text" name="date" id="datepicker">
 </p>
 <p>
   <input type="submit" value="Ajouter"/>
