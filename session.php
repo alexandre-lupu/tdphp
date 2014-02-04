@@ -13,7 +13,7 @@ catch(PDOException $e){
 }
 
 if(!empty($_SESSION['login'])){
-  echo "<h1>Session de ".$_SESSION['login']."</h1><br/>";
+  echo "<h1>Bienvenue ".$_SESSION['login']."</h1><br/>";
 }
 else header('Location: authDB.php');
 ?>
@@ -21,7 +21,7 @@ else header('Location: authDB.php');
 <!DOCTYPE HTML>
 <html lang="fr">
   <head>
-  <title>Formulaire d\'authentification</title>
+  <title>Session</title>
   </head>
   <body>
 
