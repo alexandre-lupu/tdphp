@@ -34,7 +34,7 @@ else header('Location: authDB.php');
   </head>
   <body>
 
-<article>
+<form action="suppression.php" method="get">
 <?php
 $sql="SELECT nom,heure from participer where login=:user order by heure";
 $stmt=$connexion->prepare($sql);
@@ -54,7 +54,9 @@ else
   }
 
 ?>
-</article>
+
+<input type="submit" value="supprimer"/>
+</form>
 
 
 <form action="ajout.php" method="get">
