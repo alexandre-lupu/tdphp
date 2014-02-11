@@ -46,7 +46,7 @@ echo "<p>Cochez les &eacutel&eacutements &agrave supprimer.</p>";
 
 if($nb>0){
   foreach($stmt as $q){
-    echo "<input type='radio' id=".$q['nom'].$q['heure'].$q['Date']." name='choix'>";
+    echo "<input type='radio' value=".$q['nom']."/".$q['heure']."/".$q['Date']."/"." id=".$q['nom'].$q['heure'].$q['Date']." name='choix'>";
     echo $q['nom'].' &agrave '.$q['heure'].'h '.$q['Date'];
     echo "<br/>";
   }
