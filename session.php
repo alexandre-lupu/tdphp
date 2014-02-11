@@ -28,7 +28,7 @@ else header('Location: authDB.php');
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script>
   $(function() {
-      $("#datepicker").datepicker({ dateFormat: "dd-mm-yy"});
+      $("#datepicker").datepicker({ dateFormat: "yy-mm-dd"});
     });
   </script>
   </head>
@@ -36,7 +36,7 @@ else header('Location: authDB.php');
 
 <form action="suppression.php" method="get">
 <?php
-$sql="SELECT nom,heure,Date from participer where login=:user order by Date,heure";
+$sql="SELECT nom,heure,Date from participer where login=:user order by date,heure";
 $stmt=$connexion->prepare($sql);
 $stmt->bindParam(':user',$_SESSION['login']);
 $stmt->execute();
@@ -53,7 +53,7 @@ if($nb>0){
 }  
 else 
   {
-    echo "Pas d'activités de prévues.<br/>";
+    echo "Pas d'activit&eacutes de pr&eacutevues.<br/>";
   }
 
 ?>
