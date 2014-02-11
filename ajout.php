@@ -28,7 +28,6 @@ $stmt->bindParam(':log',$_SESSION['login']);
 $stmt->bindParam(':name',$_GET['act']);
 $stmt->bindParam(':hour',$_GET['heure']);
 $stmt->bindParam(':date',$_GET['date']);
-
 $stmt->execute();
 }
 
