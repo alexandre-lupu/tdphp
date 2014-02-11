@@ -36,18 +36,21 @@ else header('Location: authDB.php');
 
 <form action="suppression.php" method="get">
 <?php
-$sql="SELECT nom,heure from participer where login=:user order by heure";
+$sql="SELECT nom,heure,Date from participer where login=:user order by Date,heure";
 $stmt=$connexion->prepare($sql);
 $stmt->bindParam(':user',$_SESSION['login']);
 $stmt->execute();
 $nb=$stmt->rowCount();
 
+echo "<p>Cochez les &eacutel&eacutements &agrave supprimer.</p>";
+
 if($nb>0){
   foreach($stmt as $q){
-    echo $q['nom'].' &agrave '.$q['heure'].'h';
+    echo "<input type='radio' id=".$q['nom'].$q['heure'].$q['Date']." name='choix'>";
+    echo $q['nom'].' &agrave '.$q['heure'].'h '.$q['Date'];
     echo "<br/>";
   }
-}
+}  
 else 
   {
     echo "Pas d'activités de prévues.<br/>";
